@@ -1,0 +1,18 @@
+sources/lecture-*.json
+sources/lecture-*.txt
+sources/playlist.json
+verification/
+__pycache__/
+archive/
+
+# Local working edition and editorial tools; public site is docs/.
+/*.html
+/assets/
+/chapters/
+/sources/
+/render_notes.py
+/validate_notes.py
+/browser_check.py
+/audit_depth.py
+/prepare_public.py
+/verify_public.py

@@ -1,0 +1,264 @@
+# 1. Where does the money go? The economics of an AI production system
+
+The opening lecture asks how an industry can be technologically transformative while its revenues, costs, and profits remain concentrated in unexpected places. Apoorv Agrawal organizes the course around a comparison: mature cloud applications appear to support a large software economy above a smaller infrastructure base, while his contemporary AI chart places much of the measured revenue near semiconductors. The question is whether that shape reflects temporary investment, durable production costs, market power, or a measurement problem. Several mechanisms can operate together.
+
+Our recurring example is **Meridian**, an invented company selling an AI documentation service. A customer pays Meridian; Meridian buys model access or operates a model; that service consumes servers, networking, electricity, and human operations. Following one customer payment through this chain will clarify the lecture's triangle, its limitations, and the competing explanations for its future. All Meridian numbers are teaching constructions, not estimates of a named company's finances.
+
+## 1.1 A course about mechanisms and decisions [00:09](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=9s)
+
+### What a supercycle hypothesis commits us to
+
+Agrawal opens with his route through engineering, graduate study, and investing, then describes a discussion-led course spanning semiconductors, infrastructure, energy, models, and applications. The original class combined guest conversations with readings and a final assignment. Its stated ambition was practical: students should learn what to ask before founding, funding, or joining an AI business. The opening logistics and quiz establish that conversational setting; they are not evidence for an investment thesis.
+
+A **technology supercycle**, as used here, is a sustained wave of complementary investment and adoption around a general technology. The term does not itself establish a measurable duration, a rate of return, or inevitable profitability. To make the hypothesis useful, we must ask which investments enable which services, who pays for those services, and which constraints prevent supply and demand from adjusting immediately.
+
+Meridian illustrates the distinction between technical possibility and commercial completion. A model that can draft an acceptable document makes the service possible. A workflow that can obtain the right inputs, protect customer information, detect errors, and deliver on time makes the service usable. A price customers accept that exceeds the relevant cost makes it economically sustainable. Each transition requires evidence; success at the first does not logically imply success at the third.
+
+The course's cross-layer guest list matters because no single participant sees the whole production system equally well. A chip supplier sees orders and hardware roadmaps. An infrastructure operator sees installation, financing, and utilization. A model developer sees training and serving demand. An application company sees customer retention and willingness to pay. A consistent explanation must reconcile these views without treating any participant's commercial incentives as proof of dishonesty or as a guarantee of impartiality.
+
+### Four quantities that must remain distinct
+
+Define **revenue** as consideration earned from customers during a specified period. **Gross profit** subtracts the costs classified as cost of revenue. **Operating profit** additionally subtracts operating expenses under the accounting convention used. **Cash flow** tracks cash receipts and payments; it differs from profit because capital purchases, financing, depreciation, and working-capital changes occur on different schedules.
+
+For a deliberately simplified monthly Meridian model, let $R$ be revenue, $C_v$ the variable service cost, and $F$ the remaining fixed operating expense, all in dollars per month. Define contribution $M$ and operating result $\Pi$ by
+
+$$
+M=R-C_v,\qquad \Pi=M-F.
+$$
+
+Contribution is useful for asking whether one more unit of business helps cover fixed expenses. It is not automatically a reported accounting gross-profit measure. Classification differs across firms, and some costs that look fixed over a month vary when capacity is expanded. Comparing published margins requires inspecting their definitions and periods.
+
+Suppose customers pay Meridian 100,000 per month, variable service costs are 35,000, and the remaining operating expense is 80,000. Contribution is 65,000, but the operating result is negative 15,000. Calling the service “65% profitable” would confuse a contribution margin with profitability. Calling it economically useless would also be premature: it may have positive customer value and positive incremental contribution while failing to recover current fixed costs.
+
+These distinctions give the rest of the course a common language. Whenever a speaker says a layer is winning, ask whether the claim concerns technical performance, revenue growth, gross margin, operating income, cash generation, or investor return. Those are related questions, not interchangeable measurements.
+
+## 1.2 Why the AI triangle differs from the cloud triangle [05:00](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=300s)
+
+The first substantive discussion identifies three explanations for the chart: AI is early in its investment cycle; NVIDIA has a strong competitive position; and inference makes incremental application use costly. Agrawal accepts elements of all three. This is an important feature of the source argument: the chart is a problem to explain, not a demonstration that one explanation has already won.
+
+### Trace a payment before aggregating a stack
+
+Assume an end customer pays Meridian 100 dollars. Meridian pays a model provider 30; the model provider pays an infrastructure provider 15; that provider incurs a ten-dollar equipment-service charge from a hardware supplier. If we add the four businesses' revenues, we obtain 155 dollars associated with only 100 dollars of final customer spending. The intermediate revenues are real business transactions, but summing them does not measure final demand or value added.
+
+In a simplified chain containing no other intermediate inputs, the differences are 70, 15, 5, and 10 dollars, which sum back to 100. These differences are **value added** within the simplified boundary. They still contain wages, depreciation, taxes, and returns to capital; they are not all profits. Real companies have many additional suppliers, and equipment purchases are capital transactions whose treatment depends on whether we are analyzing cash flow or production in a particular period.
+
+The lecture's stack chart is therefore best read as an industrial map of reported or estimated business activity. It cannot, by itself, establish the economy's net benefit, the total addressable final market, or the distribution of economic profit. A layer can have large revenue because it supplies many downstream firms, because its inputs are expensive, because its margins are high, or because customers are purchasing ahead of future use.
+
+This distinction becomes operational when Meridian considers owning its serving infrastructure. A transfer previously recorded as a vendor's revenue may disappear from the external transaction chain and become an internal cost. The physical computation can remain nearly unchanged. Industry comparisons must therefore distinguish a change in organizational boundaries from a change in technological efficiency.
+
+### Incremental inference changes the subscription bargain
+
+Agrawal contrasts traditional software's low distribution cost with AI applications that consume meaningful compute as users work. Ordinary software was never literally costless to serve: storage, support, network traffic, and reliability already mattered. The useful distinction is that some AI workflows incur a large, usage-sensitive inference bill relative to their subscription price.
+
+Let $p$ be monthly price per customer, $q$ requests per customer per month, $c$ dollars per request, and $s$ other variable dollars per customer per month. For $N$ comparable customers and fixed expense $F$, the model is
+
+$$
+R=Np,\qquad M=N(p-s-cq),\qquad
+\Pi=N(p-s-cq)-F.
+$$
+
+The expression $p-s-cq$ is the per-customer contribution. Increasing $N$ helps only if this quantity is positive, assuming the parameters remain unchanged. Economies of scale may reduce $c$ or spread $F$, but that is an additional mechanism requiring evidence. Scale cannot repair a negative contribution merely by multiplying it.
+
+Meridian charges 30 dollars monthly and spends three dollars on non-inference service cost. A light user makes 250 requests at two cents each, leaving $30-3-5=22$ dollars. A heavy user makes 2,500 requests, leaving $30-3-50=-23$ dollars. Let $h\in[0,1]$ be the heavy-user fraction. Average contribution is
+
+$$
+\bar m=(1-h)22+h(-23)=22-45h.
+$$
+
+The subscription has positive average contribution exactly when $h<22/45$, approximately 48.89%. At 20% heavy users, average contribution is thirteen dollars. Fixed expense of 220,000 per month then requires at least 16,924 customers to produce a nonnegative operating result under these assumptions. A growing heavy-user share changes that threshold even if customer count and subscription price look healthy.
+
+### Why better products can worsen a unit-cost problem
+
+A successful feature may induce more requests, longer outputs, more retries, or autonomous tasks that continue after the customer stops typing. If willingness to pay rises less rapidly than service cost, a technically better product can reduce contribution. Conversely, a better model can reduce retries and human correction, lowering cost per accepted outcome even while its token price is higher.
+
+This is why the economically relevant denominator is often an accepted document or resolved task. For Meridian, ten cheap drafts that require repeated correction may be inferior to one more expensive acceptable draft. The later inference chapter develops that quality constraint explicitly. Here the main lesson is that neither “more usage” nor “cheaper tokens” is sufficient to infer better economics.
+
+## 1.3 Investment timing, incumbent revenue, and accounting boundaries [09:45](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=585s)
+
+Agrawal invokes cloud history to argue that infrastructure expenditure can precede mature application revenue by years. He also fields questions about incumbents such as Salesforce and Palantir, hardware bought for future capacity, and Google's presence in several layers. These questions are not peripheral objections. They determine what the triangle actually measures.
+
+### Correct the chronology without discarding the mechanism
+
+The recording compresses AWS history into a sequence beginning in 2004 and describing Netflix as its first customer in 2010. That is not a reliable literal chronology. Amazon's contemporaneous [S3 announcement is dated 14 March 2006](https://aws.amazon.com/blogs/aws/amazon_s3/) and already offers a public service to developers. The defensible lesson is the lag between infrastructure development and widespread adoption, not the particular dates or “first customer” claim in the conversation.
+
+The research extension is broader. Brynjolfsson, Rock, and Syverson's [productivity J-curve paper](https://www.nber.org/papers/w25148) models how complementary intangible investment can delay measured productivity gains from a general-purpose technology. It provides a mechanism for early expenditure and later benefits; it does not show that every AI capital project will earn an adequate return. Meridian's training, evaluation, and workflow redesign may be necessary complements even when they initially appear as expense rather than visible output.
+
+To examine a particular investment, let $I_0$ be initial cash expenditure, $CF_t$ the net cash flow at the end of year $t$, $r>-1$ the annual discount rate, and $T$ the horizon in years. The **net present value** is
+
+$$
+\operatorname{NPV}=-I_0+\sum_{t=1}^{T}\frac{CF_t}{(1+r)^t}.
+$$
+
+The discount factor expresses that a dollar delivered later is not treated as equivalent to a dollar available now. In this deterministic teaching model, the chosen rate summarizes time value and the required return. A full uncertain valuation would need explicit scenarios or risk-adjusted valuation assumptions, with care not to count the same risk twice.
+
+Suppose a project costs 100 million now and generates thirty million annually for five years. At 10%, its NPV is approximately positive 13.72 million. If the final two annual cash flows fall to ten million, the NPV becomes approximately negative 12.36 million. Both scenarios can coexist with rapid growth in AI adoption. The return depends on the specific asset's cash flows, competitive position, and timing.
+
+Notice the stock-flow mismatch in the source question. A chip purchase can create service capacity lasting several years, while application revenue in the chart may cover only one year or an annualized run rate. Comparing them is informative about current money flows but insufficient to assess lifetime capital recovery. Annual recurring revenue is itself a rate measured at a point in time; it is not necessarily the revenue recognized over the preceding year.
+
+### Incumbents complicate attribution
+
+The student asking about incumbent software identifies an important measurement gap. An established platform may sell an AI feature inside a broad contract, improve retention without charging separately, or use a model internally to lower its own cost. None of those effects is necessarily reported as a clean “AI revenue” line.
+
+Agrawal says model or inference spending can help capture activity that is hard to extract from public application disclosures. That is a useful observable input, but it is not a dollar-for-dollar measurement of the incumbent's AI-attributable revenue. Meridian might spend one dollar on inference to preserve a 100-dollar contract; another firm might spend the same dollar on an experiment with no sales. Identical model spending supports very different downstream value.
+
+An empirical stack study should therefore specify whether it measures vendor revenue, customer spending, AI-specific incremental revenue, or a proxy such as model consumption. It should identify bundled products, internal use, and missing disclosures. A proxy can be useful while remaining imperfect. Treating missing information as zero would be another error.
+
+### One company can occupy several layers
+
+The Google question leads Agrawal to split the company into business units: chip design, cloud infrastructure, models, and consumer applications. That is analytically preferable to forcing a conglomerate into one box. Yet internal transfers introduce new difficulties. An internally designed accelerator may not have an observable arm's-length sale price, and a consumer product may monetize indirectly through a wider ecosystem.
+
+For Meridian, the same issue appears at a smaller scale. If it develops its own model, application revenue and model capability coexist within one firm. The accounting boundary has moved, but the technical tasks of training, serving, and delivering a useful outcome remain. A serious comparison maintains both views: a functional map of production and a financial map of the legal entities that receive payments.
+
+## 1.4 Equilibrium, training demand, and competitive bottlenecks [15:50](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=950s)
+
+A student asks what an unsuccessful technology would look like and whether a successful industry must eventually invert its triangle. Agrawal expresses confidence in AI's importance while acknowledging uncertainty about the industry's stable configuration and its timing. He suggests two possible catalysts: successful alternative chips and a change in hyperscaler capital-expenditure guidance. These are hypotheses about mechanisms, not necessary or sufficient tests of technological success.
+
+### A successful technology need not reward every supplier
+
+An **equilibrium** is a configuration in which relevant participants have no incentive to change their choices given the choices and constraints of others. This definition does not imply permanence. New hardware, model capability, regulation, financing, and customer preferences can change the underlying problem faster than firms can adjust.
+
+Meridian might create substantial customer value while competition forces its price close to cost. A chip supplier might earn scarcity rents during an installation bottleneck and later face price compression. An infrastructure investor might lose money after overbuilding even though users benefit from abundant cheap capacity. The social usefulness of the technology, the industry's total spending, and the return to a particular security can move differently.
+
+Let $v$ be a customer's dollar value from one accepted task, $p$ its price, and $c$ its real resource cost in a simplified single-task model. Customer surplus is $v-p$, supplier surplus before fixed costs is $p-c$, and their sum is $v-c$. Changing bargaining power can move $p$ without changing $v$ or $c$. Lowering resource cost can expand total surplus, but who captures the expansion depends on competition and contracts.
+
+If Meridian saves a customer twenty dollars of effort, charges eight, and incurs three in variable cost, customer surplus is twelve and contribution is five. If competition pushes price to four with unchanged quality and cost, the customer gains four more dollars while Meridian's contribution falls to one. The service has not become less useful. The division of its value has changed.
+
+### Training and inference have different scheduling needs
+
+The audience asks whether inference must become larger than training for the industry shape to change. Agrawal cites an approximate inference share and expects it to rise, while describing training as comparatively predictable and inference as bursty. The numerical share is a speaker estimate from the recording, not a verified present fleet statistic. The workload distinction is useful but must be qualified: interrupted training, evaluation, reinforcement-learning rollouts, batch inference, and continuous agents blur a simple binary division.
+
+**Training** changes model parameters through optimization. **Inference** evaluates a model using its current parameters. Inference can serve an external user or generate trajectories used inside training. Consequently, a dollar classified economically as research expense can buy technically inferential computation. Later lectures make this overlap central.
+
+Let $K$ be available compute capacity in device-hours per period, $x$ research allocation, and $y$ production allocation. Feasibility requires $x+y\leq K$. If $V_R(x)$ and $V_P(y)$ represent expected incremental values, an idealized planner chooses allocations to maximize $V_R(x)+V_P(y)$. When both functions are differentiable and concave and both allocations are positive, shifting a small amount from one to the other cannot improve the result only when
+
+$$
+V_R'(x)=V_P'(y).
+$$
+
+This is a marginal-value condition, not an instruction to split capacity equally. It follows because a small transfer $\delta$ from research to production changes value approximately by $\delta[V_P'(y)-V_R'(x)]$. Research value is difficult to observe, tasks may be indivisible, and different devices may not be interchangeable, so the model identifies the decision logic rather than a ready-made allocation algorithm.
+
+### Guidance is evidence about expectations
+
+A reduction in capital-expenditure guidance could indicate weaker demand, better efficiency, financing constraints, installation delays, or completion of a planned build. A continued increase could reflect strong demand or competitive overinvestment. The lecture recommends listening to management discussions because they expose firms' perceived constraints. Reading those statements well requires comparing explanations with utilization, contracted demand, delivery schedules, and realized cash flows.
+
+For Meridian, the corresponding discipline is to keep a capacity plan with reversal conditions. What utilization justifies a longer commitment? What quality improvement would justify a more expensive model? What delay would make an otherwise cheap resource unusable? A forecast becomes more informative when it states which observations would change the decision.
+
+## 1.5 Concentration, vertical integration, and platform risk [19:50](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=1190s)
+
+The profitability question brings Agrawal back to semiconductors. He contrasts a roughly mid-seventies gross-margin estimate for NVIDIA with much lower estimated application margins, explicitly speaking approximately. These figures should remain attached to the recording and its accounting uncertainty. They are not current audited segment comparisons, and gross margin alone does not establish an operating-profit ranking.
+
+### Few buyers can matter as much as few sellers
+
+The question about custom chips asks who will buy from a new accelerator company if hyperscalers develop their own designs. Agrawal emphasizes a small number of very large customers. That changes the entrepreneurial problem: a startup may need a few enormous design wins rather than millions of small purchases.
+
+Suppose a supplier expects revenue shares $s_i$ from customers $i=1,\ldots,n$, with $s_i\geq0$ and $\sum_i s_i=1$. The concentration statistic $H=\sum_i s_i^2$ ranges from $1/n$ under equal shares to one under a single customer. This is a descriptive index, not a complete measure of bargaining power. Contract duration, switching costs, substitute suppliers, and the customer's ability to integrate upstream also matter.
+
+For five equal customers, $H=0.2$. If one supplies 80% of revenue and four each supply 5%, $H=0.65$. Losing the largest customer then has a very different consequence even though the customer count is unchanged. Meridian faces a related problem if one enterprise contract finances most of its infrastructure commitment. Counting logos would conceal the exposure.
+
+Alternative chips must win on an entire delivered workload. Device price, compiler support, numerical behavior, memory capacity, network topology, deployment tooling, and engineering time affect adoption. A theoretically efficient chip may struggle if the customer's model changes before integration is complete. The next lecture connects that adoption problem to the physics of prefill and decode.
+
+### Integration can remove friction and extend control
+
+The source discussion compares Google, Apple, Meta, cloud providers, and NVIDIA's efforts to move into adjacent layers. The historical market-capitalization and market-share numbers are conversational illustrations, not retained here as verified measurements. The substantive claim is that successful firms sometimes combine multiple stages of production and distribution.
+
+**Vertical integration** places complementary stages under common control. It can coordinate hardware and software, reduce contracting friction, and internalize the benefit of investing in a complement. It can also limit customer choice or make independent suppliers dependent on a competitor. Neither effect follows merely from the number of boxes a company occupies on a diagram.
+
+Consider Meridian buying a component from a supplier that also launches a competing documentation application. The supplier may offer excellent infrastructure while creating a strategic dependency. Meridian should examine portability, contract rights, evaluation independence, and the uniqueness of its customer workflow. It should not infer that all integrated suppliers will misuse customer information; that would require evidence beyond the structure of the relationship.
+
+The lecture's “feature or platform” question applies especially to the middle layer. A feature solves a bounded need that a larger service might absorb. A platform supplies a reusable foundation across many applications and often coordinates several capabilities or participants. These are strategic descriptions rather than permanent categories. An independent service can survive alongside a bundled equivalent if it delivers enough performance, reliability, flexibility, or customer trust to justify the additional relationship.
+
+### Growth does not settle the distribution question
+
+After a brief quiz whose visual prompts are not recoverable from the captions, Agrawal revisits his chart over a two-year interval. He reports strong ecosystem and application growth but relatively little change in its shape, with much added revenue flowing to semiconductors and strong concentration among leading application providers. Those magnitudes are attributed estimates from his presentation, not reconstructed data: the captions do not supply the full underlying spreadsheet.
+
+The mechanism is clear even without reproducing unsupported chart precision. If every layer grows by the same factor, revenue shares stay constant. If applications grow faster from a much smaller base, they can post a dramatic percentage increase while remaining smaller in absolute dollars. Let initial revenues be ten and one hundred. A tenfold increase in the first produces one hundred; doubling the second produces two hundred. “Ten times growth” does not imply leadership in level.
+
+This arithmetic prevents two common mistakes: dismissing application progress because it has not yet overtaken infrastructure, and assuming rapid application growth guarantees a future inversion. The question remains empirical and depends on both production costs and monetization.
+
+## 1.6 Consumer adoption, subscriptions, and advertising [28:00](https://www.youtube.com/watch?v=LNSvp-9b-J0&t=1680s)
+
+The closing discussion moves from the production stack to consumer demand. Agrawal compares everyday utilities, social networks, and narrower-purpose products, asking which pattern AI assistants might follow. He notes that active knowledge work requires a user to formulate a task; that behavior may not automatically reach the same population or frequency as messaging, entertainment, or other habitual services.
+
+### User count and revenue per user are separate variables
+
+Let $U$ be active users under a specified measurement window and $a$ annual revenue per such user. Annual revenue is $R=Ua$ only when the population and period definitions are consistent. Mixing registered accounts, monthly active users, weekly active users, and daily users can produce apparently precise but meaningless comparisons.
+
+The recording offers rough cross-company user and monetization figures to motivate two different ambitions: reach more people and earn more per user. We retain the two-variable argument without treating its approximate figures as a current market table. Growth in $U$ can come from broader access, improved usefulness, distribution, or habit formation. Growth in $a$ can come from subscriptions, advertising, commerce, business use, or heavier paid consumption. Each mechanism changes incentives and cost.
+
+A **network effect** exists when a user's benefit depends on participation by other users. Messaging has a direct example: the service is more useful when the people one wants to contact are reachable. An individual assistant can be valuable without that direct social mechanism. It may instead benefit from distribution, integrations, shared content, or learning from permitted feedback. Calling every scale advantage a network effect hides which mechanism actually supports retention.
+
+### A free tier creates a financing problem, not an automatic failure
+
+Let $f$ be the paid fraction, $p$ annual revenue per paid user, $c_p$ annual variable cost per paid user, and $c_f$ annual variable cost per free user. With $U$ total users, contribution before fixed costs is
+
+$$
+M=U\left[f(p-c_p)-(1-f)c_f\right].
+$$
+
+With one million users, $f=0.05$, $p=240$, $c_p=80$, and $c_f=8$, paid users contribute eight million dollars before the free tier. Free users cost 7.6 million, leaving only 0.4 million for fixed expense. Revenue is twelve million, but contribution is much smaller. The free population may provide future conversion, distribution, or other value, yet that value must be modeled rather than silently treated as cash already received.
+
+If advertising adds annual revenue $a_f$ per free user without changing costs or behavior, contribution increases by $U(1-f)a_f$. At twelve dollars, the increase is 11.4 million. That calculation isolates a mechanism; its assumptions are intentionally strong. Advertising can alter retention, user trust, interaction design, advertiser demand, and serving expense. A monetization change should be evaluated on the resulting equilibrium, not on an extra revenue line with everything else frozen forever.
+
+Agrawal argues that assistants may understand commercial intent and support valuable attribution, while acknowledging the tension between a personal conversation and advertising. OpenAI's [January 2026 business-model statement](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/) describes subscriptions, usage-based APIs, commerce, and advertising as parts of its approach. That is primary evidence of the company's stated strategy, not independent proof of the unit economics or the speaker's forecast.
+
+### Make the model executable before trusting the spreadsheet
+
+The following pure functions calculate the subscription mixture and discounted cash flow already derived. Inputs use one consistent currency and period; the NPV cash flows occur at successive period ends. They return numbers, make no purchases, and have no external effects. The assertions check the numerical examples and the heavy-user boundary.
+
+```python
+def mixed_contribution(light, heavy, heavy_share):
+    if not 0 <= heavy_share <= 1:
+        raise ValueError("share must be between zero and one")
+    return (1 - heavy_share) * light + heavy_share * heavy
+
+
+def npv(initial_cost, cash_flows, rate):
+    if initial_cost < 0 or rate <= -1:
+        raise ValueError("invalid investment or discount rate")
+    return -initial_cost + sum(
+        cash / (1 + rate) ** year
+        for year, cash in enumerate(cash_flows, start=1)
+    )
+
+
+assert mixed_contribution(22, -23, 0.2) == 13
+assert abs(mixed_contribution(22, -23, 22 / 45)) < 1e-12
+assert abs(npv(100, [30] * 5, 0.1) - 13.723603) < 1e-6
+assert abs(npv(100, [30, 30, 30, 10, 10], 0.1) + 12.356) < 0.01
+```
+
+The functions do not validate the economic assumptions. An arithmetically correct NPV can still rely on implausible retention, omitted replacement expenditure, or a mismatched discount rate. Executable checks remove avoidable arithmetic errors so that judgment can focus on the uncertain inputs and causal mechanisms.
+
+Meridian's initial decision memo now has a coherent structure. Specify the customer outcome and its value; measure usage-sensitive cost; identify who receives each payment; separate annual operations from long-lived investment; assess bargaining and dependency; and state how monetization supports the service. The later lectures fill in the engineering and organizational details needed to estimate those quantities responsibly.
+
+## Exercises
+
+1. **Reconstruct the stack.** An end user pays 120 dollars. The application pays a model supplier 45, which pays infrastructure 25, which pays an equipment-service supplier 15. Calculate summed revenues and simplified value added at each stage. Explain why neither is automatically total profit.
+2. **Find the subscription boundary.** A service charges forty dollars monthly, spends five on other variable costs, and pays 0.01 per request. Light users make 500 requests and heavy users 4,000. Derive the maximum heavy-user fraction consistent with positive contribution. Find the customer count needed to cover 100,000 fixed monthly expense when heavy users are 20%.
+3. **Stress an investment.** Use the chapter's five-year project. Calculate the NPV if the first year's cash flow is zero and the remaining four are thirty million, without adding a sixth year. Explain how this differs from delaying the whole project by one year.
+4. **Diagnose a proxy.** Two incumbent firms each spend ten million on model APIs. One bundles an assistant into existing contracts; the other sells a separate paid product. What can be inferred about their AI revenue? Design a disclosure table that would improve the comparison.
+5. **Derive free-tier sustainability.** Using the consumer model with $p=240$, $c_p=80$, and $c_f=8$, derive the paid fraction needed for nonnegative contribution without ads. Then add four dollars annual advertising revenue per free user. What assumption could invalidate the apparent improvement?
+6. **Separate success from returns.** Construct a numerical example in which total customer surplus rises while an infrastructure investor loses money. Identify the observable evidence needed to distinguish temporary investment from durable negative unit economics.
+
+## Solutions and discussion
+
+1. Summed revenues are $120+45+25+15=205$. Simplified value added is 75 at the application, twenty at the model supplier, ten at infrastructure, and fifteen at the last supplier; it totals 120. The intermediate payments explain the difference. These residuals still finance labor, depreciation, and other claims. With omitted external inputs, even this simplified value-added calculation would need adjustment. Profit requires specifying the relevant expense boundary.
+
+2. Light-user contribution is $40-5-5=30$ dollars; heavy-user contribution is $40-5-40=-5$. Average contribution is $30-35h$, positive when $h<6/7$, approximately 85.71%. At 20%, it is twenty-three dollars. Covering 100,000 requires $N\geq100{,}000/23$, so the smallest integer is 4,348. This answer assumes acquiring those customers does not change usage mix, prices, service quality, or fixed capacity needs.
+
+3. Removing the first thirty-million payment reduces the original NPV by $30/1.1\approx27.27$ million, producing approximately negative 13.55 million. Delaying all five payments while retaining them would instead discount the entire operating annuity one additional year. If the initial investment also moves, that must be specified separately. “One-year delay” is not a complete cash-flow description.
+
+4. The common API spend establishes comparable spending on one input, subject to contract and accounting differences. It does not identify incremental revenue, retained revenue, internal savings, or profitability. A useful table would disclose recognized revenue and period, bundled versus separately priced products, active paid users, usage, model and other service costs, conversion or retention evidence, and the method used to attribute incremental revenue. Unknown quantities should remain unknown rather than being replaced by the input bill.
+
+5. Without advertising, nonnegative contribution requires $160f-8(1-f)\geq0$, hence $f\geq8/168\approx4.76\%$. With four dollars earned per free user, their net cost is four, giving $160f-4(1-f)\geq0$ and $f\geq4/164\approx2.44\%$. This calculation assumes advertising does not reduce conversion or retention and does not add expense. If ads drive paying users away, the new equilibrium can be worse despite the extra free-user revenue.
+
+6. Suppose a service's customer value remains twenty per task while competition lowers price from eight to four. Customer surplus rises from twelve to sixteen. An infrastructure project that invested one hundred expecting five annual cash flows of thirty could nevertheless receive only ten annually and fail to recover its cost at a positive required return. The example separates task-level customer benefit from asset-level capital recovery. Useful evidence includes contribution by customer cohort, utilization, contractual demand, replacement expenditure, deployment delays, and realized cash flows. Aggregate adoption growth alone cannot distinguish these cases.
+
+## Primary-source references
+
+- Apoorv Agrawal, [original opening lecture](https://www.youtube.com/watch?v=LNSvp-9b-J0), Spring 2026. Source of the course framing, industrial comparison, audience questions, and monetization hypotheses.
+- Jeff Barr, [Amazon S3 announcement](https://aws.amazon.com/blogs/aws/amazon_s3/), 14 March 2006. Contemporaneous evidence correcting the compressed AWS chronology.
+- Erik Brynjolfsson, Daniel Rock, and Chad Syverson, [The Productivity J-Curve](https://www.nber.org/papers/w25148), NBER working paper 25148. Research extension on complementary intangible investment and delayed measured productivity.
+- Sarah Friar, [A business that scales with the value of intelligence](https://openai.com/index/a-business-that-scales-with-the-value-of-intelligence/), 18 January 2026. Primary corporate statement of business-model strategy, not independently audited financial evidence.
+
+**Coverage boundary.** The chapter preserves the opening purpose, the three explanations for the industry shape, the incumbent-revenue and timing objections, Google's cross-layer position, equilibrium and inference questions, profitability and customer concentration, vertical integration, the two-year comparison, and the closing consumer-monetization argument. Quiz visuals, unseen chart data, applause, repeated prompts, and personal jokes are not reconstructed. Speaker estimates remain attributed. Definitions, Meridian, equations, code, exercises, and the cited research connections are teaching additions.
