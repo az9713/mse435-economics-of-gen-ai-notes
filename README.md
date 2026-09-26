@@ -1,8 +1,8 @@
 # Stanford MS&E435 — Economics of the AI Supercycle
 
-**[Read the complete textbook online](https://az9713.github.io/stanford-mse435/)** · [Lecture-to-source map](https://az9713.github.io/stanford-mse435/source-map.html) · [Primary references](https://az9713.github.io/stanford-mse435/references.html)
+**[Read the complete textbook online](https://az9713.github.io/mse435-economics-of-gen-ai-notes/)** · [Lecture-to-source map](https://az9713.github.io/mse435-economics-of-gen-ai-notes/source-map.html) · [Primary references](https://az9713.github.io/mse435-economics-of-gen-ai-notes/references.html)
 
-[![Preview of the online lecture notes](docs/assets/site-preview.png)](https://az9713.github.io/stanford-mse435/)
+[![Preview of the online lecture notes](docs/assets/site-preview.png)](https://az9713.github.io/mse435-economics-of-gen-ai-notes/)
 
 Independent, transcript-grounded study notes for **Stanford University's MS&E435: Economics of the AI Supercycle**, Spring 2026, taught by **Apoorv Agrawal** in the Department of Management Science & Engineering. The course examines the economics of AI through conversations with practitioners across chips, energy, infrastructure, models, applications, and life sciences.
 
@@ -16,15 +16,15 @@ Every **Read chapter** link opens a fully rendered GitHub Pages page with mathem
 
 | # | Topic and speakers | Live notes | Source recording |
 |---|---|---|---|
-| 1 | Economics of generative AI — Apoorv Agrawal | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-01.html) | [YouTube](https://www.youtube.com/watch?v=LNSvp-9b-J0) |
-| 2 | The GPU economy — Brad Gerstner and Sunny Madra | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-02.html) | [YouTube](https://www.youtube.com/watch?v=BBl8bNJP6ds) |
-| 3 | Building AI factories — Chase Lochmiller | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-03.html) | [YouTube](https://www.youtube.com/watch?v=GcCGzfKdCd0) |
-| 4 | Enterprise AI and SaaS — Ali Ghodsi | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-04.html) | [YouTube](https://www.youtube.com/watch?v=sRvrXL83N-c) |
-| 5 | Industrial compute and strategy — Sachin Katti | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-05.html) | [YouTube](https://www.youtube.com/watch?v=4k53z3Ysjg0) |
-| 6 | Enterprise knowledge and specialization — Yash Patil | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-06.html) | [YouTube](https://www.youtube.com/watch?v=LRGX-gTegVA) |
-| 7 | Coding AI and software creation — Guillermo Rauch | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-07.html) | [YouTube](https://www.youtube.com/watch?v=HA7lZd7zk3M) |
-| 8 | Applied AI and inference platforms — Tuhin Srivastava | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-08.html) | [YouTube](https://www.youtube.com/watch?v=Qh7Oxvo5sJI) |
-| 9 | AI in life sciences — Josh Meier and Eric Kauderer-Abrams | [Read chapter](https://az9713.github.io/stanford-mse435/lecture-09.html) | [YouTube](https://www.youtube.com/watch?v=nWKiJHKIZfo) |
+| 1 | Economics of generative AI — Apoorv Agrawal | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-01.html) | [YouTube](https://www.youtube.com/watch?v=LNSvp-9b-J0) |
+| 2 | The GPU economy — Brad Gerstner and Sunny Madra | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-02.html) | [YouTube](https://www.youtube.com/watch?v=BBl8bNJP6ds) |
+| 3 | Building AI factories — Chase Lochmiller | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-03.html) | [YouTube](https://www.youtube.com/watch?v=GcCGzfKdCd0) |
+| 4 | Enterprise AI and SaaS — Ali Ghodsi | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-04.html) | [YouTube](https://www.youtube.com/watch?v=sRvrXL83N-c) |
+| 5 | Industrial compute and strategy — Sachin Katti | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-05.html) | [YouTube](https://www.youtube.com/watch?v=4k53z3Ysjg0) |
+| 6 | Enterprise knowledge and specialization — Yash Patil | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-06.html) | [YouTube](https://www.youtube.com/watch?v=LRGX-gTegVA) |
+| 7 | Coding AI and software creation — Guillermo Rauch | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-07.html) | [YouTube](https://www.youtube.com/watch?v=HA7lZd7zk3M) |
+| 8 | Applied AI and inference platforms — Tuhin Srivastava | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-08.html) | [YouTube](https://www.youtube.com/watch?v=Qh7Oxvo5sJI) |
+| 9 | AI in life sciences — Josh Meier and Eric Kauderer-Abrams | [Read chapter](https://az9713.github.io/mse435-economics-of-gen-ai-notes/lecture-09.html) | [YouTube](https://www.youtube.com/watch?v=nWKiJHKIZfo) |
 
 ## Our contribution beyond the transcripts
 
@@ -37,7 +37,7 @@ The recordings provide the topic sequence, substantive arguments, examples, qual
 - **Exercises with fully worked solutions.** Fifty-four problems develop computation, derivation, assumption checking, counterexamples, and design judgment.
 - **Source traceability and reading tools.** Sixty-four timestamped sections, a lecture map, coverage ledgers, local mathematical rendering, mobile layouts, code-copy controls, and print styling make the material easier to study and audit.
 
-The second edition contains approximately **49,000 words across nine chapters**, grounded in **7 hours 1 minute of recordings**. The [reference library](https://az9713.github.io/stanford-mse435/references.html) collects 51 distinct source URLs, including the nine recordings. These counts describe the package, not a percentage of transcript coverage or a claim that every source was read in full.
+The second edition contains approximately **49,000 words across nine chapters**, grounded in **7 hours 1 minute of recordings**. The [reference library](https://az9713.github.io/mse435-economics-of-gen-ai-notes/references.html) collects 51 distinct source URLs, including the nine recordings. These counts describe the package, not a percentage of transcript coverage or a claim that every source was read in full.
 
 ## Evidence and attribution
 
@@ -45,7 +45,7 @@ The complete English caption tracks were reviewed. Repeated prompts, banter, and
 
 Speaker forecasts, company figures, and private performance claims remain attributed rather than being presented as independently verified current facts. A company publication establishes what the company reported. Original models state their simplifying assumptions, and research extensions identify the scope of their supporting source.
 
-The public repository includes [caption provenance metadata](docs/sources/manifest.json) and chapter coverage ledgers, linked from the [lecture map](https://az9713.github.io/stanford-mse435/source-map.html). Full extracted caption files and private working archives are not redistributed here. Use the original recordings for source context.
+The public repository includes [caption provenance metadata](docs/sources/manifest.json) and chapter coverage ledgers, linked from the [lecture map](https://az9713.github.io/mse435-economics-of-gen-ai-notes/source-map.html). Full extracted caption files and private working archives are not redistributed here. Use the original recordings for source context.
 
 ## Repository and local reading
 
